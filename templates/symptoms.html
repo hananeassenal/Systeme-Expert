@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Systeme Expert - Diagnostic PC</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Systeme Expert - Diagnostic PC</h1>
+    <h2>Liste des symptômes :</h2>
+    <select id="symptoms" multiple>
+        {% for symptome in symptomes %}
+        <option>{{ symptome }}</option>
+        {% endfor %}
+    </select><br>
+    <button onclick="diagnose()">Faire un diagnostic</button>
+    <p id="result"></p>
+    <script>
+        function diagnose() {
+            var selectedIndices = [];
+            var symptomsSelect = document.getElementById("symptoms");
+            for (var i = 0; i < symptomsSelect.options.length; i++) {
+                if (symptomsSelect.options[i].selected) {
+                    selectedIndices.push(i);
+                }
+            }
+            fetch('/diagnose', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ selected_indices: selectedIndices })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("result").innerText = data.result;
+            });
+        }
+    </script>
+    <br>
+    <a href="/logout">Déconnexion</a>
+</body>
+</html>
