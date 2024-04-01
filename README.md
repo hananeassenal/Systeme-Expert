@@ -13,9 +13,9 @@ Instructions de configuration
    python app.py
    ```
 5. Ouvrez un navigateur web et accédez à http://127.0.0.1:5000 pour accéder à l'application.
-Description
+# Description
 Ce système expert utilise une approche basée sur des règles pour diagnostiquer les problèmes de PC. Les règles sont stockées dans un fichier nommé base.txt, où chaque ligne représente une règle au format symptôme:composant_affecté. L'application permet aux utilisateurs de sélectionner plusieurs symptômes dans une liste, et en cliquant sur le bouton "Effectuer le diagnostic", elle analyse les symptômes sélectionnés par rapport aux règles stockées pour déterminer les composants potentiellement défectueux.
-Fichiers du projet:
+# Fichiers du projet:
 1. app.py: Ce fichier contient le code Python pour l'application Flask. Il définit les routes pour le serveur web, gère les requêtes utilisateur et orchestre la logique de diagnostic. 
 2. index.html: C'est le fichier HTML qui définit l'interface utilisateur. Il contient une liste de symptômes à sélectionner et un bouton pour lancer le diagnostic.
  3. base.txt: Ce fichier texte contient les règles utilisées par le système expert pour le diagnostic. Chaque ligne représente une règle avec un symptôme et le composant affecté.
