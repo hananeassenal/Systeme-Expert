@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Systeme Expert - Diagnostic PC</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Systeme Expert - Ajouter/Modifier/Supprimer une règle</h1>
+    <form action="/add_rule" method="post">
+        <label for="conditions">Conditions (séparées par des virgules):</label><br>
+        <input type="text" id="conditions" name="conditions"><br>
+        <label for="organ_en_panne">Organe en panne:</label><br>
+        <input type="text" id="organ_en_panne" name="organ_en_panne"><br><br>
+        <input type="submit" value="Ajouter">
+    </form>
+    <form action="/modify_or_delete_rule" method="post">
+        <label for="rule_number">Numéro de la règle à modifier/supprimer:</label><br>
+        <input type="text" id="rule_number" name="rule_number"><br><br>
+        <label for="new_conditions">Nouvelles conditions:</label><br>
+        <input type="text" id="new_conditions" name="new_conditions"><br>
+        <label for="new_organ">Nouvel organe en panne:</label><br>
+        <input type="text" id="new_organ" name="new_organ"><br><br>
+        <input type="submit" name="modify" value="Modifier">
+        <input type="submit" name="delete" value="Supprimer">
+    </form>
+    <br>
+    <a href="/logout">Déconnexion</a>
+</body>
+</html>
