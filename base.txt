@@ -1,0 +1,12 @@
+ventilateur bruyant:Probleme de refroidissement
+bips au demarrage:Probleme de carte graphique
+lenteur extreme:Probleme de disque dur
+disque dur emet des clics:Probleme de disque dur
+ecran clignote:aucun son:Probleme d'alimentation
+programmes se ferment inopinement:Probleme de memoire RAM
+ecrans bleus frequents:Probleme de memoire RAM
+souris non detectee:Probleme de peripheriques d'entree
+clavier ne fonctionne pas:Probleme de peripheriques d'entree
+connexion internet instable:Probleme de carte reseau
+pages web ne se chargent pas:Probleme de carte reseau
+probléme d'ouvreture du pc:probleme de boot
